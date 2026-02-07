@@ -1,0 +1,144 @@
+# Requirements: 5C Menu
+
+**Defined:** 2026-02-07
+**Core Value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
+
+## v1 Requirements
+
+Requirements for initial release. Each maps to roadmap phases.
+
+### Parsing
+
+- [ ] **PARS-01**: System fetches daily menus from Sodexo vendor site (HMC Hoch-Shanahan)
+- [ ] **PARS-02**: System fetches daily menus from Bon Appetit vendor site (CMC Collins, Scripps Malott, Pitzer McConnell)
+- [ ] **PARS-03**: System fetches daily menus from Pomona dining site (Frank, Frary, Oldenborg)
+- [ ] **PARS-04**: Parsers extract station/category groupings from vendor data
+- [ ] **PARS-05**: Parsers extract dietary/allergen tags from vendor data where available
+- [ ] **PARS-06**: Parsers replicate v1 station filtering and ordering logic
+- [ ] **PARS-07**: Parser failures fall back to last-known-good data with "Last updated X ago" timestamp
+
+### API
+
+- [ ] **API-01**: GET /api/v2/halls returns all 7 dining halls with metadata
+- [ ] **API-02**: GET /api/v2/menus returns menu for a given hall, date, and meal
+- [ ] **API-03**: GET /api/v2/open-now returns currently open halls
+- [ ] **API-04**: Menu responses served from Redis cache (30-min TTL) with PostgreSQL fallback
+- [ ] **API-05**: Cache stampede prevention via request coalescing and TTL jitter
+
+### Frontend
+
+- [ ] **FE-01**: User can view all 7 dining halls in a vertical scroll feed
+- [ ] **FE-02**: User can switch between Breakfast, Lunch, and Dinner tabs per hall
+- [ ] **FE-03**: User can see menu items grouped by station/category
+- [ ] **FE-04**: User can see dietary/allergen icons on menu items
+- [ ] **FE-05**: User can filter hall list to show only currently open halls ("What's Open Now")
+- [ ] **FE-06**: User can see open/closed status per hall with color-coded badges
+- [ ] **FE-07**: User can see dining hall hours
+- [ ] **FE-08**: User can navigate menus for today + 6 days ahead via date bar
+- [ ] **FE-09**: User sees school color card backgrounds per hall
+- [ ] **FE-10**: User can use dark mode (follows system default)
+- [ ] **FE-11**: User can use the app on mobile screens (375px+) with responsive layout
+- [ ] **FE-12**: User sees "Last updated X ago" when viewing stale menu data
+
+### Admin
+
+- [ ] **ADM-01**: Admin can log in via magic link email (Resend)
+- [ ] **ADM-02**: Admin can edit dining hours in a table grid (halls × days)
+- [ ] **ADM-03**: Admin can create date overrides for holidays and breaks
+- [ ] **ADM-04**: Admin can view parser health dashboard (last fetch time, error rates)
+
+### Testing
+
+- [ ] **TEST-01**: Parser unit tests with HTML fixture snapshots from each vendor
+- [ ] **TEST-02**: API endpoint integration tests
+- [ ] **TEST-03**: Key frontend component tests (Vitest)
+
+## v2 Requirements
+
+Deferred to future release. Tracked but not in current roadmap.
+
+### Discovery
+
+- **DISC-01**: User can search for a food item across all halls ("Where is chicken tikka masala today?")
+- **DISC-02**: User can set persistent dietary preferences and filter menu items accordingly
+
+### Installability
+
+- **INST-01**: User can install the web app to their home screen (PWA)
+- **INST-02**: User can view cached menus offline
+
+### Mobile
+
+- **MOBL-01**: User can access the app as a native iOS/Android app (Expo/React Native)
+
+### Crowding
+
+- **CRWD-01**: User can see real-time crowding level per hall (not busy / moderate / busy)
+- **CRWD-02**: Mobile app contributes anonymous location data for crowding aggregation
+- **CRWD-03**: System falls back to schedule-based crowding estimates when data is insufficient
+
+## Out of Scope
+
+Explicitly excluded. Documented to prevent scope creep.
+
+| Feature | Reason |
+|---------|--------|
+| User accounts / authentication | App is anonymous; localStorage for preferences. Friction kills casual usage. |
+| Food ratings / reviews | Moderation nightmare for solo dev; small user base makes ratings meaningless. |
+| Meal plan balance checking | Requires storing student credentials — security liability. Separate product. |
+| Mobile ordering / pre-ordering | Requires POS integration impossible without institutional partnership. |
+| Push notifications | High ongoing cost, low opt-in rates. Reconsider only for native mobile. |
+| Nutrition calculator / calorie tracking | Vendor data quality inconsistent; liability risk for health claims. |
+| Social features (friends, sharing) | Students coordinate via existing messaging apps. Separate product. |
+| Multi-language support | English-speaking campus; menu item names don't translate meaningfully. |
+| Apple Watch / wearable support | Tiny user base, high maintenance cost. |
+| Ads system | Dropped from v1 entirely. |
+| Settings page | Deferred; no user preferences to configure in v1. |
+| OAuth / social login | Not needed; app is anonymous for users. |
+
+## Traceability
+
+Which phases cover which requirements. Updated during roadmap creation.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| PARS-01 | — | Pending |
+| PARS-02 | — | Pending |
+| PARS-03 | — | Pending |
+| PARS-04 | — | Pending |
+| PARS-05 | — | Pending |
+| PARS-06 | — | Pending |
+| PARS-07 | — | Pending |
+| API-01 | — | Pending |
+| API-02 | — | Pending |
+| API-03 | — | Pending |
+| API-04 | — | Pending |
+| API-05 | — | Pending |
+| FE-01 | — | Pending |
+| FE-02 | — | Pending |
+| FE-03 | — | Pending |
+| FE-04 | — | Pending |
+| FE-05 | — | Pending |
+| FE-06 | — | Pending |
+| FE-07 | — | Pending |
+| FE-08 | — | Pending |
+| FE-09 | — | Pending |
+| FE-10 | — | Pending |
+| FE-11 | — | Pending |
+| FE-12 | — | Pending |
+| ADM-01 | — | Pending |
+| ADM-02 | — | Pending |
+| ADM-03 | — | Pending |
+| ADM-04 | — | Pending |
+| TEST-01 | — | Pending |
+| TEST-02 | — | Pending |
+| TEST-03 | — | Pending |
+
+**Coverage:**
+- v1 requirements: 26 total
+- Mapped to phases: 0
+- Unmapped: 26 ⚠️
+
+---
+*Requirements defined: 2026-02-07*
+*Last updated: 2026-02-07 after initial definition*
