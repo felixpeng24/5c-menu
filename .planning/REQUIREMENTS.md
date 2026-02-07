@@ -85,7 +85,7 @@ Explicitly excluded. Documented to prevent scope creep.
 |---------|--------|
 | User accounts / authentication | App is anonymous; localStorage for preferences. Friction kills casual usage. |
 | Food ratings / reviews | Moderation nightmare for solo dev; small user base makes ratings meaningless. |
-| Meal plan balance checking | Requires storing student credentials — security liability. Separate product. |
+| Meal plan balance checking | Requires storing student credentials -- security liability. Separate product. |
 | Mobile ordering / pre-ordering | Requires POS integration impossible without institutional partnership. |
 | Push notifications | High ongoing cost, low opt-in rates. Reconsider only for native mobile. |
 | Nutrition calculator / calorie tracking | Vendor data quality inconsistent; liability risk for health claims. |
@@ -102,43 +102,43 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PARS-01 | — | Pending |
-| PARS-02 | — | Pending |
-| PARS-03 | — | Pending |
-| PARS-04 | — | Pending |
-| PARS-05 | — | Pending |
-| PARS-06 | — | Pending |
-| PARS-07 | — | Pending |
-| API-01 | — | Pending |
-| API-02 | — | Pending |
-| API-03 | — | Pending |
-| API-04 | — | Pending |
-| API-05 | — | Pending |
-| FE-01 | — | Pending |
-| FE-02 | — | Pending |
-| FE-03 | — | Pending |
-| FE-04 | — | Pending |
-| FE-05 | — | Pending |
-| FE-06 | — | Pending |
-| FE-07 | — | Pending |
-| FE-08 | — | Pending |
-| FE-09 | — | Pending |
-| FE-10 | — | Pending |
-| FE-11 | — | Pending |
-| FE-12 | — | Pending |
-| ADM-01 | — | Pending |
-| ADM-02 | — | Pending |
-| ADM-03 | — | Pending |
-| ADM-04 | — | Pending |
-| TEST-01 | — | Pending |
-| TEST-02 | — | Pending |
-| TEST-03 | — | Pending |
+| PARS-01 | Phase 1 | Pending |
+| PARS-02 | Phase 1 | Pending |
+| PARS-03 | Phase 1 | Pending |
+| PARS-04 | Phase 1 | Pending |
+| PARS-05 | Phase 1 | Pending |
+| PARS-06 | Phase 1 | Pending |
+| PARS-07 | Phase 1 | Pending |
+| API-01 | Phase 2 | Pending |
+| API-02 | Phase 2 | Pending |
+| API-03 | Phase 2 | Pending |
+| API-04 | Phase 2 | Pending |
+| API-05 | Phase 2 | Pending |
+| FE-01 | Phase 3 | Pending |
+| FE-02 | Phase 3 | Pending |
+| FE-03 | Phase 3 | Pending |
+| FE-04 | Phase 3 | Pending |
+| FE-05 | Phase 3 | Pending |
+| FE-06 | Phase 3 | Pending |
+| FE-07 | Phase 3 | Pending |
+| FE-08 | Phase 3 | Pending |
+| FE-09 | Phase 3 | Pending |
+| FE-10 | Phase 3 | Pending |
+| FE-11 | Phase 3 | Pending |
+| FE-12 | Phase 3 | Pending |
+| ADM-01 | Phase 4 | Pending |
+| ADM-02 | Phase 4 | Pending |
+| ADM-03 | Phase 4 | Pending |
+| ADM-04 | Phase 4 | Pending |
+| TEST-01 | Phase 1 | Pending |
+| TEST-02 | Phase 2 | Pending |
+| TEST-03 | Phase 3 | Pending |
 
 **Coverage:**
-- v1 requirements: 26 total
-- Mapped to phases: 0
-- Unmapped: 26 ⚠️
+- v1 requirements: 31 total
+- Mapped to phases: 31
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-07*
-*Last updated: 2026-02-07 after initial definition*
+*Last updated: 2026-02-07 after roadmap creation*
