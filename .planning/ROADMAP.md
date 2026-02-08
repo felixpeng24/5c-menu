@@ -29,11 +29,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Running the Pomona parser returns structured menu data for Frank, Frary, and Oldenborg with station groupings and dietary tags
   4. When a parser fails (network error, HTML structure change), the system falls back to the last-known-good data stored in PostgreSQL
   5. Parser unit tests pass against saved HTML fixture snapshots for each vendor, validating extraction logic without network calls
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Foundation: project setup, SQLModel models, parser base class, station filter configs
+- [ ] 01-02-PLAN.md -- Sodexo parser (Hoch-Shanahan) with fixture tests
+- [ ] 01-03-PLAN.md -- Bon Appetit parser (Collins, Malott, McConnell) with fixture tests
+- [ ] 01-04-PLAN.md -- Pomona parser (Frank, Frary, Oldenborg) + fallback orchestrator with fixture tests
 
 ### Phase 2: API & Caching
 **Goal**: Menu data is served through fast, resilient API endpoints with intelligent caching
@@ -88,7 +90,7 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Parsers & Data Models | 0/TBD | Not started | - |
+| 1. Parsers & Data Models | 0/4 | Planning complete | - |
 | 2. API & Caching | 0/TBD | Not started | - |
 | 3. Web Frontend | 0/TBD | Not started | - |
 | 4. Admin Panel | 0/TBD | Not started | - |
