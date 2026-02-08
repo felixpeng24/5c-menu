@@ -1,4 +1,5 @@
 from app.parsers.base import BaseParser
+from app.parsers.sodexo import SodexoParser
 from app.parsers.station_filters import (
     StationFilterConfig,
     apply_station_filters,
@@ -12,6 +13,7 @@ from app.parsers.station_filters import (
 
 __all__ = [
     "BaseParser",
+    "SodexoParser",
     "StationFilterConfig",
     "apply_station_filters",
     "SODEXO_FILTER",
