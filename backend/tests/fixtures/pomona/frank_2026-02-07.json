@@ -1,0 +1,262 @@
+{
+  "EatecExchange": {
+    "menu": [
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Breakfast",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Grill Station",
+              "@shortName": "Scrambled Eggs",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Grill Station",
+              "@shortName": "Turkey Sausage",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Mainline",
+              "@shortName": "Pancakes, French Toast",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Mainline",
+              "@shortName": "Oatmeal",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Lunch",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Entree",
+              "@shortName": "Grilled Chicken Breast",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Entree",
+              "@shortName": "Beef Stir Fry",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Expo",
+              "@shortName": "Veggie Tacos",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Grill",
+              "@shortName": "Hamburger",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Grill",
+              "@shortName": "Veggie Burger",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Pizza",
+              "@shortName": "Cheese Pizza",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Salad Bar",
+              "@shortName": "Mixed Greens",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Soup",
+              "@shortName": "Tomato Basil Soup",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Dessert",
+              "@shortName": "Chocolate Cake",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Vegan/Veggie",
+              "@shortName": "Tofu Stir Fry",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Expo Station",
+              "@shortName": "Hidden Item",
+              "@displayonwebsite": "N",
+              "dietaryChoices": {
+                "dietaryChoice": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Dinner",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Entree",
+              "@shortName": "Roasted Salmon",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Entree",
+              "@shortName": "Pasta Primavera",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Soup Station",
+              "@shortName": "Minestrone",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Dessert",
+              "@shortName": "Tiramisu",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@servedate": "20260208",
+        "@mealperiodname": "Lunch",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Entree",
+              "@shortName": "Mac and Cheese",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"}
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

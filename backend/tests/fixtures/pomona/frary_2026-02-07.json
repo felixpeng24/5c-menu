@@ -1,0 +1,108 @@
+{
+  "EatecExchange": {
+    "menu": [
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Breakfast",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Grill",
+              "@shortName": "Bacon, Hash Browns",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Mainline",
+              "@shortName": "Waffles",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Lunch",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Entree",
+              "@shortName": "Chicken Parmesan",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Expo",
+              "@shortName": "Rice Bowl",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Salad",
+              "@shortName": "Caesar Salad",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Dessert",
+              "@shortName": "Brownie",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Dinner",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": {
+            "@category": "Entree",
+            "@shortName": "Lamb Stew",
+            "@displayonwebsite": "Y",
+            "dietaryChoices": {
+              "dietaryChoice": [
+                {"@id": "Vegetarian", "#text": "No"},
+                {"@id": "Vegan", "#text": "No"}
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

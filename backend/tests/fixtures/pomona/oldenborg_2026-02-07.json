@@ -1,0 +1,72 @@
+{
+  "EatecExchange": {
+    "menu": [
+      {
+        "@servedate": "20260207",
+        "@mealperiodname": "Lunch",
+        "@menubulletin": "",
+        "recipes": {
+          "recipe": [
+            {
+              "@category": "Entree",
+              "@shortName": "Pasta/Salad, Bread",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Entree",
+              "@shortName": "Chicken Tikka Masala",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "No"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            },
+            {
+              "@category": "Soup",
+              "@shortName": "Lentil Soup",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "Yes"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Salad",
+              "@shortName": "Greek Salad",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"},
+                  {"@id": "Gluten Free", "#text": "Yes"}
+                ]
+              }
+            },
+            {
+              "@category": "Dessert",
+              "@shortName": "Baklava/Flan",
+              "@displayonwebsite": "Y",
+              "dietaryChoices": {
+                "dietaryChoice": [
+                  {"@id": "Vegetarian", "#text": "Yes"},
+                  {"@id": "Vegan", "#text": "No"}
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
