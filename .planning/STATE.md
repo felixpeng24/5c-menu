@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-07)
 ## Current Position
 
 Phase: 1 of 4 (Parsers & Data Models)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-02-07 -- Roadmap created
+Plan: 1 of 4 in current phase
+Status: In progress
+Last activity: 2026-02-07 -- Completed 01-01-PLAN.md (Project Setup & Data Models)
 
-Progress: [..........] 0%
+Progress: [█░░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 5 min
+- Total execution time: 5 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-parsers-data-models | 1/4 | 5 min | 5 min |
 
 **Recent Trend:**
-- Last 5 plans: -
-- Trend: -
+- Last 5 plans: 5 min
+- Trend: baseline
 
 *Updated after each plan completion*
 
@@ -44,10 +44,14 @@ Recent decisions affecting current work:
 
 - Roadmap: 4 phases derived from requirement clusters (Parsers, API, Frontend, Admin)
 - Roadmap: Phases 3 and 4 both depend on Phase 2, could run in parallel
+- 01-01: Used `import datetime as _dt` aliasing to avoid Pydantic 2.12 field name clash with `date` type + `UniqueConstraint`
+- 01-01: `stations_json` typed as `Any` with `sa_column=Column(JSON)` for SQLModel 0.0.32 / Pydantic 2.12 compatibility
+- 01-01: Station filter pipeline uses dict-based merge preserving insertion order
+- 01-01: Dietary tag normalization maps to lowercase canonical strings (not enum values)
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
@@ -57,5 +61,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-07
-Stopped at: Roadmap created, ready to plan Phase 1
-Resume file: None
+Stopped at: Completed Plan 01 (Project Setup & Data Models), ready for Plan 02 (Sodexo Parser)
+Resume file: .planning/phases/01-parsers-data-models/01-01-SUMMARY.md
