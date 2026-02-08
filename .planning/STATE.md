@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
-**Current focus:** Phase 1 - Parsers & Data Models
+**Current focus:** Phase 1 complete, ready for Phase 2
 
 ## Current Position
 
 Phase: 1 of 4 (Parsers & Data Models)
-Plan: 1 of 4 in current phase
-Status: In progress
-Last activity: 2026-02-07 -- Completed 01-01-PLAN.md (Project Setup & Data Models)
+Plan: 4 of 4 in current phase
+Status: Phase 1 complete, verified
+Last activity: 2026-02-07 -- Phase 1 verified (5/5 must-haves passed)
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 4
 - Average duration: 5 min
-- Total execution time: 5 min
+- Total execution time: 19 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-parsers-data-models | 1/4 | 5 min | 5 min |
+| 01-parsers-data-models | 4/4 | 19 min | ~5 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min
-- Trend: baseline
+- Last 5 plans: 5m, 4m, 5m, 5m
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -48,6 +48,10 @@ Recent decisions affecting current work:
 - 01-01: `stations_json` typed as `Any` with `sa_column=Column(JSON)` for SQLModel 0.0.32 / Pydantic 2.12 compatibility
 - 01-01: Station filter pipeline uses dict-based merge preserving insertion order
 - 01-01: Dietary tag normalization maps to lowercase canonical strings (not enum values)
+- 01-02: Sodexo parser uses live JSON-in-HTML extraction from nutData div
+- 01-03: BAMCO parser uses regex extraction of Bamco.menu_items + Bamco.dayparts from inline JS (legacy JSON API confirmed dead, 403)
+- 01-04: Pomona parser uses synthetic fixtures (live site requires auth); fallback orchestrator uses mock-based tests
+- 01-04: Replaced deprecated `datetime.utcnow()` with `datetime.now(timezone.utc)`
 
 ### Pending Todos
 
@@ -55,11 +59,11 @@ None.
 
 ### Blockers/Concerns
 
-- Bon Appetit may embed menu data in JavaScript objects rather than HTML -- parser approach (undocumented JSON API vs regex extraction) needs investigation in Phase 1
-- Dietary data availability varies by vendor -- Pomona coverage unknown
+- Pomona JSON URL discovery needs runtime validation -- synthetic fixtures used for testing, live site may redirect to auth portal
+- BAMCO fixture files are large (~1-1.5 MB each) -- consider .gitignore if repo size is a concern
 
 ## Session Continuity
 
 Last session: 2026-02-07
-Stopped at: Completed Plan 01 (Project Setup & Data Models), ready for Plan 02 (Sodexo Parser)
-Resume file: .planning/phases/01-parsers-data-models/01-01-SUMMARY.md
+Stopped at: Phase 1 complete and verified, ready for Phase 2 planning
+Resume file: None

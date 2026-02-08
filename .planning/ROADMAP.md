@@ -12,7 +12,7 @@ This roadmap delivers a complete dining hall menu app for the Claremont Colleges
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Parsers & Data Models** - Scrape menus from all 3 vendors, persist to PostgreSQL, with validation and fallback
+- [x] **Phase 1: Parsers & Data Models** - Scrape menus from all 3 vendors, persist to PostgreSQL, with validation and fallback
 - [ ] **Phase 2: API & Caching** - Serve menu data via FastAPI endpoints with Redis caching and stampede prevention
 - [ ] **Phase 3: Web Frontend** - Student-facing Next.js app with menu browsing, filtering, and responsive design
 - [ ] **Phase 4: Admin Panel** - Magic link auth, hours management, and parser health monitoring
@@ -32,10 +32,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Foundation: project setup, SQLModel models, parser base class, station filter configs
-- [ ] 01-02-PLAN.md -- Sodexo parser (Hoch-Shanahan) with fixture tests
-- [ ] 01-03-PLAN.md -- Bon Appetit parser (Collins, Malott, McConnell) with fixture tests
-- [ ] 01-04-PLAN.md -- Pomona parser (Frank, Frary, Oldenborg) + fallback orchestrator with fixture tests
+- [x] 01-01-PLAN.md -- Foundation: project setup, SQLModel models, parser base class, station filter configs
+- [x] 01-02-PLAN.md -- Sodexo parser (Hoch-Shanahan) with fixture tests
+- [x] 01-03-PLAN.md -- Bon Appetit parser (Collins, Malott, McConnell) with fixture tests
+- [x] 01-04-PLAN.md -- Pomona parser (Frank, Frary, Oldenborg) + fallback orchestrator with fixture tests
 
 ### Phase 2: API & Caching
 **Goal**: Menu data is served through fast, resilient API endpoints with intelligent caching
@@ -90,7 +90,7 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Parsers & Data Models | 0/4 | Planning complete | - |
+| 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
 | 2. API & Caching | 0/TBD | Not started | - |
 | 3. Web Frontend | 0/TBD | Not started | - |
 | 4. Admin Panel | 0/TBD | Not started | - |
