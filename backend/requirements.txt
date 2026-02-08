@@ -1,0 +1,10 @@
+httpx>=0.28.1
+selectolax>=0.4.6
+sqlmodel>=0.0.22
+asyncpg
+pydantic-settings>=2.0
+beautifulsoup4
+alembic
+psycopg2-binary
+pytest
+pytest-asyncio

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fivec-menu"
+version = "0.1.0"
+description = "5C Dining Hall Menu Aggregator"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "selectolax>=0.4.6",
+    "sqlmodel>=0.0.22",
+    "asyncpg",
+    "pydantic-settings>=2.0",
+    "beautifulsoup4",
+    "alembic",
+    "psycopg2-binary",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
