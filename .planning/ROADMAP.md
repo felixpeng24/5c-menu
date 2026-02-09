@@ -65,11 +65,14 @@ Plans:
   3. User can toggle "What's Open Now" to filter the feed to only halls currently serving a meal
   4. User can navigate to any date within the next 7 days via a date bar and see that day's menus
   5. User can use the app on a 375px mobile screen in both light and dark mode with no layout breakage
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Next.js 15 scaffold, Tailwind v4 + school colors, TanStack Query provider, API client, types, constants, Vitest config
+- [ ] 03-02-PLAN.md -- Core UI components: HallCard, MealTabs, StationList, MenuItem, Badge, Skeleton
+- [ ] 03-03-PLAN.md -- Navigation & filtering: DateBar, OpenNowToggle, StaleBanner
+- [ ] 03-04-PLAN.md -- Page assembly: compose all components into hall feed with state management
+- [ ] 03-05-PLAN.md -- Component tests (Vitest): StaleBanner, DateBar, MenuItem, OpenNowToggle, HallCard
 
 ### Phase 4: Admin Panel
 **Goal**: A single admin can manage dining hours, holiday overrides, and monitor parser health
@@ -95,5 +98,5 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 |-------|---------------|--------|-----------|
 | 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
 | 2. API & Caching | 4/4 | Complete ✓ | 2026-02-08 |
-| 3. Web Frontend | 0/TBD | Not started | - |
+| 3. Web Frontend | 0/5 | Not started | - |
 | 4. Admin Panel | 0/TBD | Not started | - |
