@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
-**Current focus:** Phase 2 in progress (API & Caching)
+**Current focus:** Phase 2 complete, ready for Phase 3 (Frontend) or Phase 4 (Admin)
 
 ## Current Position
 
-Phase: 2 of 4 (API & Caching)
-Plan: 3 of 4 in current phase
-Status: Plans 02-01, 02-02, 02-03 complete, executing phase 2
-Last activity: 2026-02-09 -- Completed 02-03 (hours service, open-now endpoint)
+Phase: 2 of 4 (API & Caching) -- COMPLETE
+Plan: 4 of 4 in current phase
+Status: Phase 2 complete (all 4 plans executed)
+Last activity: 2026-02-09 -- Completed 02-04 (API integration tests)
 
-Progress: [████████████░░░░░░░░] 31%
+Progress: [████████████████░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 4 min
-- Total execution time: 21 min
+- Total plans completed: 8
+- Average duration: 3 min
+- Total execution time: 24 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-parsers-data-models | 4/4 | 19 min | ~5 min |
-| 02-api-caching | 1/4 | 2 min | ~2 min |
+| 02-api-caching | 4/4 | 5 min | ~1 min |
 
 **Recent Trend:**
-- Last 5 plans: 4m, 5m, 5m, 2m
+- Last 5 plans: 5m, 5m, 2m, 3m
 - Trend: stable
 
 *Updated after each plan completion*
@@ -62,6 +62,9 @@ Recent decisions affecting current work:
 - 02-03: Override precedence: start_time=None means closed, override times replace regular, override-only entries are special openings
 - 02-03: Service layer pattern: business logic in app/services/, routers delegate to service functions
 - 02-03: Testability via now_override parameter instead of mocking datetime.now
+- 02-04: Integration tests use dependency_overrides with fakeredis + in-memory SQLite (no external services)
+- 02-04: Menu tests mock parser fetch_and_parse to return None, testing DB fallback path
+- 02-04: Upgraded pytest-asyncio to 0.25.3 for modern async fixture support
 
 ### Pending Todos
 
@@ -75,5 +78,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-09
-Stopped at: Completed 02-03-PLAN.md (hours service, open-now endpoint)
+Stopped at: Completed 02-04-PLAN.md (API integration tests) -- Phase 2 complete
 Resume file: None
