@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.redis import create_redis
-from app.routers import halls, menus, open_now
+from app.routers import admin, halls, menus, open_now
 
 
 @asynccontextmanager
@@ -24,10 +24,11 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.allowed_origins,
     allow_credentials=True,
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
 app.include_router(halls.router, prefix="/api/v2/halls")
 app.include_router(menus.router, prefix="/api/v2/menus")
 app.include_router(open_now.router, prefix="/api/v2/open-now")
+app.include_router(admin.router, prefix="/api/v2/admin")
