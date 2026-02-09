@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
-**Current focus:** Phase 3 complete, ready for Phase 4 (Admin Panel)
+**Current focus:** Phase 4 (Admin Panel) - auth foundation complete, CRUD endpoints next
 
 ## Current Position
 
-Phase: 3 of 4 (Web Frontend) -- COMPLETE
-Plan: 5 of 5 in current phase
-Status: Phase 3 complete, verified (5/5 success criteria passed)
-Last activity: 2026-02-09 -- Phase 3 verified (5/5 must-haves passed)
+Phase: 4 of 4 (Admin Panel)
+Plan: 1 of 4 in current phase
+Status: Plan 04-01 complete (auth foundation)
+Last activity: 2026-02-09 -- Completed 04-01 (admin auth, ParserRun model, schemas)
 
-Progress: [███████████████░░░░░] 75%
+Progress: [████████████████░░░░] 82%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
+- Total plans completed: 14
 - Average duration: 3 min
-- Total execution time: 38 min
+- Total execution time: 40 min
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [███████████████░░░░░] 75%
 | 01-parsers-data-models | 4/4 | 19 min | ~5 min |
 | 02-api-caching | 4/4 | 5 min | ~1 min |
 | 03-web-frontend | 5/5 | 14 min | ~3 min |
+| 04-admin-panel | 1/4 | 2 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 4m, 2m, 2m, 2m, 1m
+- Last 5 plans: 2m, 2m, 2m, 1m, 2m
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -77,6 +78,10 @@ Recent decisions affecting current work:
 - 03-04: Open-now filter only applies when selected date is Pacific today
 - 03-04: Sticky header with backdrop-blur, max-w-lg mobile-first layout
 - 03-05: 17 component tests across 5 files, HallCard tests use QueryClientProvider wrapper
+- 04-01: PyJWT for magic link JWT creation/verification (HS256, 15min expiry for links, 7day for sessions)
+- 04-01: Anti-enumeration pattern: POST /auth/request-link always returns 200 regardless of email match
+- 04-01: Session stored in httpOnly secure cookie (samesite=lax), require_admin FastAPI dependency for auth gate
+- 04-01: ParserRun model uses string status field (not enum) for flexibility
 
 ### Pending Todos
 
@@ -90,5 +95,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-09
-Stopped at: Phase 3 complete and verified, ready for Phase 4 planning
+Stopped at: Completed 04-01-PLAN.md (admin auth foundation)
 Resume file: None
