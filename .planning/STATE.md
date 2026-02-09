@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
-**Current focus:** Phase 2 complete, ready for Phase 3 (Frontend) or Phase 4 (Admin)
+**Current focus:** Phase 3 in progress (Web Frontend)
 
 ## Current Position
 
-Phase: 2 of 4 (API & Caching) -- COMPLETE
-Plan: 4 of 4 in current phase
-Status: Phase 2 complete, verified (5/5 success criteria passed)
-Last activity: 2026-02-08 -- Phase 2 verified (5/5 must-haves passed)
+Phase: 3 of 4 (Web Frontend)
+Plan: 1 of 5 in current phase -- COMPLETE
+Status: Plan 03-01 complete, ready for 03-02
+Last activity: 2026-02-09 -- Completed 03-01 scaffold plan
 
-Progress: [████████████████░░░░] 50%
+Progress: [██████████████████░░] 56%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 3 min
-- Total execution time: 24 min
+- Total execution time: 28 min
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [████████████████░░░░] 50%
 |-------|-------|-------|----------|
 | 01-parsers-data-models | 4/4 | 19 min | ~5 min |
 | 02-api-caching | 4/4 | 5 min | ~1 min |
+| 03-web-frontend | 1/5 | 4 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 5m, 5m, 2m, 3m
+- Last 5 plans: 5m, 5m, 2m, 3m, 4m
 - Trend: stable
 
 *Updated after each plan completion*
@@ -65,6 +66,10 @@ Recent decisions affecting current work:
 - 02-04: Integration tests use dependency_overrides with fakeredis + in-memory SQLite (no external services)
 - 02-04: Menu tests mock parser fetch_and_parse to return None, testing DB fallback path
 - 02-04: Upgraded pytest-asyncio to 0.25.3 for modern async fixture support
+- 03-01: Tailwind v4 CSS-first config via @theme in globals.css (no tailwind.config.ts)
+- 03-01: QueryProvider uses useState pattern to avoid recreating QueryClient on re-renders
+- 03-01: useOpenNow polls every 60s; useHalls has 5min staleTime for rarely-changing metadata
+- 03-01: TypeScript interfaces in types.ts match backend Pydantic schemas exactly
 
 ### Pending Todos
 
@@ -77,6 +82,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-08
-Stopped at: Phase 2 complete and verified, ready for Phase 3 or Phase 4 planning
+Last session: 2026-02-09
+Stopped at: Completed 03-01-PLAN.md (Next.js scaffold)
 Resume file: None
