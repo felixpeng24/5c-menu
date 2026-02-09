@@ -13,7 +13,7 @@ This roadmap delivers a complete dining hall menu app for the Claremont Colleges
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Parsers & Data Models** - Scrape menus from all 3 vendors, persist to PostgreSQL, with validation and fallback
-- [ ] **Phase 2: API & Caching** - Serve menu data via FastAPI endpoints with Redis caching and stampede prevention
+- [x] **Phase 2: API & Caching** - Serve menu data via FastAPI endpoints with Redis caching and stampede prevention
 - [ ] **Phase 3: Web Frontend** - Student-facing Next.js app with menu browsing, filtering, and responsive design
 - [ ] **Phase 4: Admin Panel** - Magic link auth, hours management, and parser health monitoring
 
@@ -50,10 +50,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md -- App scaffold: FastAPI + Redis lifecycle, DiningHours model, response schemas, halls endpoint
-- [ ] 02-02-PLAN.md -- Cache layer + request coalescing + menu service + menus endpoint
-- [ ] 02-03-PLAN.md -- Hours service + open-now endpoint
-- [ ] 02-04-PLAN.md -- Integration tests for all three endpoints
+- [x] 02-01-PLAN.md -- App scaffold: FastAPI + Redis lifecycle, DiningHours model, response schemas, halls endpoint
+- [x] 02-02-PLAN.md -- Cache layer + request coalescing + menu service + menus endpoint
+- [x] 02-03-PLAN.md -- Hours service + open-now endpoint
+- [x] 02-04-PLAN.md -- Integration tests for all three endpoints
 
 ### Phase 3: Web Frontend
 **Goal**: Students can browse dining hall menus, see what is open, and decide where to eat
@@ -94,6 +94,6 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
-| 2. API & Caching | 0/4 | Not started | - |
+| 2. API & Caching | 4/4 | Complete ✓ | 2026-02-08 |
 | 3. Web Frontend | 0/TBD | Not started | - |
 | 4. Admin Panel | 0/TBD | Not started | - |
