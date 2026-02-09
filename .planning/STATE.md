@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-07)
 ## Current Position
 
 Phase: 2 of 4 (API & Caching)
-Plan: 1 of 4 in current phase
-Status: Plan 02-01 complete, executing phase 2
-Last activity: 2026-02-09 -- Completed 02-01 (API scaffold, Redis, halls endpoint)
+Plan: 3 of 4 in current phase
+Status: Plans 02-01, 02-02, 02-03 complete, executing phase 2
+Last activity: 2026-02-09 -- Completed 02-03 (hours service, open-now endpoint)
 
 Progress: [████████████░░░░░░░░] 31%
 
@@ -56,6 +56,9 @@ Recent decisions affecting current work:
 - 02-01: Redis managed via FastAPI lifespan context manager, not module-level singleton
 - 02-01: Dependencies re-exported through app.dependencies for single import point
 - 02-01: Response schemas use Pydantic BaseModel (not SQLModel) for API contracts
+- 02-03: Override precedence: start_time=None means closed, override times replace regular, override-only entries are special openings
+- 02-03: Service layer pattern: business logic in app/services/, routers delegate to service functions
+- 02-03: Testability via now_override parameter instead of mocking datetime.now
 
 ### Pending Todos
 
@@ -69,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-09
-Stopped at: Completed 02-01-PLAN.md (API scaffold)
+Stopped at: Completed 02-03-PLAN.md (hours service, open-now endpoint)
 Resume file: None
