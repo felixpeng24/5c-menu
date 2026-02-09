@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useMenu } from '@/lib/hooks'
 import { HALL_MEALS, DEFAULT_MEAL } from '@/lib/constants'
 import { StationList } from './station-list'
+import { StaleBanner } from './stale-banner'
 import { Skeleton } from './ui/skeleton'
 
 interface MealTabsProps {
@@ -43,10 +44,8 @@ export function MealTabs({ hallId, date, defaultMeal }: MealTabsProps) {
         ))}
       </div>
 
-      {/* Stale data indicator */}
-      {data?.is_stale && data.fetched_at && (
-        <p className="text-amber-300 text-xs mb-2">Data may be outdated</p>
-      )}
+      {/* Stale data banner */}
+      {data && <StaleBanner isStale={data.is_stale} fetchedAt={data.fetched_at} />}
 
       {/* Content */}
       {isLoading && (
