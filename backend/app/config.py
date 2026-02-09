@@ -11,6 +11,13 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     allowed_origins: list[str] = ["http://localhost:3000"]
 
+    # Admin panel settings
+    admin_email: str = ""
+    resend_api_key: str = ""
+    jwt_secret: str = "dev-secret-change-me"
+    frontend_url: str = "http://localhost:3000"
+    admin_from_email: str = "onboarding@resend.dev"
+
     model_config = {"env_prefix": "FIVEC_"}
 
 
