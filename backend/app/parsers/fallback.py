@@ -7,10 +7,12 @@ on every successful parse for future fallback use.
 
 import datetime as _dt
 import logging
+import time
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.models.parser_run import ParserRun
 from app.models.menu import (
     Menu,
     ParsedMeal,
@@ -131,6 +133,32 @@ async def load_latest_menu(
     return menu, latest_fetched_at
 
 
+async def _record_run(
+    session: AsyncSession,
+    hall_id: str,
+    target_date: _dt.date,
+    start: float,
+    status: str,
+    error_message: str | None = None,
+) -> None:
+    """Best-effort recording of a parser run for health tracking."""
+    try:
+        duration_ms = int((time.monotonic() - start) * 1000)
+        run = ParserRun(
+            hall_id=hall_id,
+            duration_ms=duration_ms,
+            status=status,
+            error_message=error_message,
+            menu_date=target_date,
+        )
+        session.add(run)
+        await session.commit()
+    except Exception:
+        logger.warning(
+            "Failed to record parser run for %s", hall_id, exc_info=True
+        )
+
+
 async def get_menu_with_fallback(
     parser: BaseParser,
     hall_id: str,
@@ -143,19 +171,29 @@ async def get_menu_with_fallback(
     - ``is_stale=False`` means fresh data from the live parser
     - ``is_stale=True`` means fallback data from the database (or None)
     """
+    start = time.monotonic()
+    status = "success"
+    error_msg: str | None = None
+
     try:
         menu = await parser.fetch_and_parse(target_date)
         if menu is not None:
             now = _dt.datetime.now(_dt.timezone.utc)
             await persist_menu(session, hall_id, target_date, menu)
+            await _record_run(session, hall_id, target_date, start, "success")
             return menu, False, now
-    except Exception:
+        status = "no_data"
+    except Exception as exc:
         logger.warning(
             "Parser failed for %s on %s",
             hall_id,
             target_date,
             exc_info=True,
         )
+        status = "error"
+        error_msg = str(exc)[:500]
+
+    await _record_run(session, hall_id, target_date, start, status, error_msg)
 
     # Fallback: load last-known-good from database
     stored_menu, stored_fetched_at = await load_latest_menu(

@@ -3,12 +3,14 @@ import logging
 
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
+from sqlalchemy import case, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlmodel import select
 
 from app.config import get_settings
 from app.dependencies import get_session
 from app.models.dining_hours import DiningHours, DiningHoursOverride
+from app.models.parser_run import ParserRun
 from app.schemas.admin import (
     HoursCreate,
     HoursResponse,
@@ -18,6 +20,7 @@ from app.schemas.admin import (
     OverrideCreate,
     OverrideResponse,
     OverrideUpdate,
+    ParserHealthResponse,
 )
 from app.services.auth_service import (
     create_magic_link_token,
@@ -258,3 +261,49 @@ async def delete_override(
     await session.delete(row)
     await session.commit()
     return {"message": "Deleted"}
+
+
+# ---------------------------------------------------------------------------
+# Parser Health
+# ---------------------------------------------------------------------------
+
+
+@router.get("/health", response_model=list[ParserHealthResponse])
+async def parser_health(
+    admin_email: str = Depends(require_admin),
+    session: AsyncSession = Depends(get_session),
+):
+    """Return per-hall parser health summary for the last 24 hours."""
+    cutoff = _dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=24)
+    stmt = (
+        select(
+            ParserRun.hall_id,
+            func.max(
+                case(
+                    (ParserRun.status == "success", ParserRun.started_at),
+                    else_=None,
+                )
+            ).label("last_success"),
+            func.count().label("total_runs"),
+            func.sum(
+                case((ParserRun.status != "success", 1), else_=0)
+            ).label("error_count"),
+        )
+        .where(ParserRun.started_at >= cutoff)
+        .group_by(ParserRun.hall_id)
+    )
+    result = await session.execute(stmt)
+    rows = result.all()
+
+    return [
+        ParserHealthResponse(
+            hall_id=row.hall_id,
+            last_success=row.last_success.isoformat() if row.last_success else None,
+            total_runs_24h=row.total_runs,
+            error_count_24h=row.error_count,
+            error_rate=round(row.error_count / row.total_runs * 100, 1)
+            if row.total_runs > 0
+            else 0.0,
+        )
+        for row in rows
+    ]
