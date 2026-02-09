@@ -56,6 +56,9 @@ Recent decisions affecting current work:
 - 02-01: Redis managed via FastAPI lifespan context manager, not module-level singleton
 - 02-01: Dependencies re-exported through app.dependencies for single import point
 - 02-01: Response schemas use Pydantic BaseModel (not SQLModel) for API contracts
+- 02-02: Cache-aside pattern with jittered TTL (1800s +/- 300s) prevents thundering herd
+- 02-02: Request coalescing uses asyncio.Future with 30s timeout for stampede prevention
+- 02-02: Hall config and parser registry centralized in menu_service.py (not database-driven)
 - 02-03: Override precedence: start_time=None means closed, override times replace regular, override-only entries are special openings
 - 02-03: Service layer pattern: business logic in app/services/, routers delegate to service functions
 - 02-03: Testability via now_override parameter instead of mocking datetime.now
