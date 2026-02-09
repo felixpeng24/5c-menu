@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hmc: #F5C518;
+  --color-cmc: #800000;
+  --color-scripps: #2E4057;
+  --color-pitzer: #FF6600;
+  --color-pomona: #003B5C;
+}
