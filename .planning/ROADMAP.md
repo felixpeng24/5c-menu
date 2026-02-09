@@ -83,10 +83,13 @@ Plans:
   2. Admin can view and edit dining hours in a halls-by-days grid, and changes are reflected in the open/closed status on the student-facing app
   3. Admin can create date-specific overrides (e.g., "Thanksgiving break: all halls closed") that supersede regular hours
   4. Admin can view a parser health dashboard showing last successful fetch time and error rates for each parser
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md -- Backend foundation: config, ParserRun model, auth service, admin schemas, admin router (auth endpoints), CORS update
+- [ ] 04-02-PLAN.md -- Backend CRUD: hours/overrides endpoints, health query, parser fallback instrumentation
+- [ ] 04-03-PLAN.md -- Frontend auth: middleware, admin layout, login page, verify page, admin API client
+- [ ] 04-04-PLAN.md -- Frontend admin pages: hours grid editor, overrides manager, parser health dashboard
 
 ## Progress
 
