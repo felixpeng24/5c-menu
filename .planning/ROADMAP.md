@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Parsers & Data Models** - Scrape menus from all 3 vendors, persist to PostgreSQL, with validation and fallback
 - [x] **Phase 2: API & Caching** - Serve menu data via FastAPI endpoints with Redis caching and stampede prevention
-- [ ] **Phase 3: Web Frontend** - Student-facing Next.js app with menu browsing, filtering, and responsive design
+- [x] **Phase 3: Web Frontend** - Student-facing Next.js app with menu browsing, filtering, and responsive design
 - [ ] **Phase 4: Admin Panel** - Magic link auth, hours management, and parser health monitoring
 
 ## Phase Details
@@ -68,11 +68,11 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Next.js 15 scaffold, Tailwind v4 + school colors, TanStack Query provider, API client, types, constants, Vitest config
-- [ ] 03-02-PLAN.md -- Core UI components: HallCard, MealTabs, StationList, MenuItem, Badge, Skeleton
-- [ ] 03-03-PLAN.md -- Navigation & filtering: DateBar, OpenNowToggle, StaleBanner
-- [ ] 03-04-PLAN.md -- Page assembly: compose all components into hall feed with state management
-- [ ] 03-05-PLAN.md -- Component tests (Vitest): StaleBanner, DateBar, MenuItem, OpenNowToggle, HallCard
+- [x] 03-01-PLAN.md -- Next.js 15 scaffold, Tailwind v4 + school colors, TanStack Query provider, API client, types, constants, Vitest config
+- [x] 03-02-PLAN.md -- Core UI components: HallCard, MealTabs, StationList, MenuItem, Badge, Skeleton
+- [x] 03-03-PLAN.md -- Navigation & filtering: DateBar, OpenNowToggle, StaleBanner
+- [x] 03-04-PLAN.md -- Page assembly: compose all components into hall feed with state management
+- [x] 03-05-PLAN.md -- Component tests (Vitest): StaleBanner, DateBar, MenuItem, OpenNowToggle, HallCard
 
 ### Phase 4: Admin Panel
 **Goal**: A single admin can manage dining hours, holiday overrides, and monitor parser health
@@ -98,5 +98,5 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 |-------|---------------|--------|-----------|
 | 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
 | 2. API & Caching | 4/4 | Complete ✓ | 2026-02-08 |
-| 3. Web Frontend | 0/5 | Not started | - |
+| 3. Web Frontend | 5/5 | Complete ✓ | 2026-02-09 |
 | 4. Admin Panel | 0/TBD | Not started | - |
