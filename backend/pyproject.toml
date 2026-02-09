@@ -16,12 +16,18 @@ dependencies = [
     "beautifulsoup4",
     "alembic",
     "psycopg2-binary",
+    "fastapi[standard]",
+    "redis[hiredis]",
+    "uvicorn",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest",
     "pytest-asyncio",
+    "fakeredis[json]",
+    "asgi-lifespan",
+    "anyio",
 ]
 
 [tool.setuptools.packages.find]
