@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-07)
 
 **Core value:** Students can quickly see what's being served at every dining hall right now, so they can decide where to eat.
-**Current focus:** Phase 4 (Admin Panel) - auth foundation complete, CRUD endpoints next
+**Current focus:** Phase 4 (Admin Panel) - all plans complete, pending human verification
 
 ## Current Position
 
 Phase: 4 of 4 (Admin Panel)
-Plan: 1 of 4 in current phase
-Status: Plan 04-01 complete (auth foundation)
-Last activity: 2026-02-09 -- Completed 04-01 (admin auth, ParserRun model, schemas)
+Plan: 4 of 4 in current phase
+Status: Plan 04-04 complete (admin feature pages) - checkpoint: human verification pending
+Last activity: 2026-02-09 -- Completed 04-04 (hours editor, overrides manager, health dashboard)
 
-Progress: [████████████████░░░░] 82%
+Progress: [████████████████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
+- Total plans completed: 18
 - Average duration: 3 min
-- Total execution time: 40 min
+- Total execution time: 49 min
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [████████████████░░░░] 82%
 | 01-parsers-data-models | 4/4 | 19 min | ~5 min |
 | 02-api-caching | 4/4 | 5 min | ~1 min |
 | 03-web-frontend | 5/5 | 14 min | ~3 min |
-| 04-admin-panel | 1/4 | 2 min | ~2 min |
+| 04-admin-panel | 4/4 | 9 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 2m, 2m, 2m, 1m, 2m
+- Last 5 plans: 2m, 2m, 2m, 2m, 3m
 - Trend: stable/fast
 
 *Updated after each plan completion*
@@ -82,6 +82,9 @@ Recent decisions affecting current work:
 - 04-01: Anti-enumeration pattern: POST /auth/request-link always returns 200 regardless of email match
 - 04-01: Session stored in httpOnly secure cookie (samesite=lax), require_admin FastAPI dependency for auth gate
 - 04-01: ParserRun model uses string status field (not enum) for flexibility
+- 04-04: Hall IDs and meals hardcoded as local constants in admin pages (matching constants.ts pattern)
+- 04-04: Override closures use empty start/end times (null values to backend)
+- 04-04: Health dashboard thresholds: green <10%, yellow 10-30%, red >30% error rate
 
 ### Pending Todos
 
@@ -95,5 +98,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-09
-Stopped at: Completed 04-01-PLAN.md (admin auth foundation)
+Stopped at: Completed 04-04-PLAN.md (admin feature pages -- human verification checkpoint pending)
 Resume file: None
