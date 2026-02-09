@@ -7,3 +7,12 @@
   --color-pitzer: #FF6600;
   --color-pomona: #003B5C;
 }
+
+/* Hide scrollbar for date bar horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
