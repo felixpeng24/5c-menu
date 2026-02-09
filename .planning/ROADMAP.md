@@ -47,10 +47,13 @@ Plans:
   3. GET /api/v2/open-now returns only the halls currently serving a meal
   4. Repeated menu requests within 30 minutes are served from Redis cache (sub-100ms response), not by re-running parsers
   5. API integration tests pass covering all endpoints with expected response shapes
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md -- App scaffold: FastAPI + Redis lifecycle, DiningHours model, response schemas, halls endpoint
+- [ ] 02-02-PLAN.md -- Cache layer + request coalescing + menu service + menus endpoint
+- [ ] 02-03-PLAN.md -- Hours service + open-now endpoint
+- [ ] 02-04-PLAN.md -- Integration tests for all three endpoints
 
 ### Phase 3: Web Frontend
 **Goal**: Students can browse dining hall menus, see what is open, and decide where to eat
@@ -91,6 +94,6 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
-| 2. API & Caching | 0/TBD | Not started | - |
+| 2. API & Caching | 0/4 | Not started | - |
 | 3. Web Frontend | 0/TBD | Not started | - |
 | 4. Admin Panel | 0/TBD | Not started | - |
