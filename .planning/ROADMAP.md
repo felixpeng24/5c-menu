@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Parsers & Data Models** - Scrape menus from all 3 vendors, persist to PostgreSQL, with validation and fallback
 - [x] **Phase 2: API & Caching** - Serve menu data via FastAPI endpoints with Redis caching and stampede prevention
 - [x] **Phase 3: Web Frontend** - Student-facing Next.js app with menu browsing, filtering, and responsive design
-- [ ] **Phase 4: Admin Panel** - Magic link auth, hours management, and parser health monitoring
+- [x] **Phase 4: Admin Panel** - Magic link auth, hours management, and parser health monitoring
 
 ## Phase Details
 
@@ -86,10 +86,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Backend foundation: config, ParserRun model, auth service, admin schemas, admin router (auth endpoints), CORS update
-- [ ] 04-02-PLAN.md -- Backend CRUD: hours/overrides endpoints, health query, parser fallback instrumentation
-- [ ] 04-03-PLAN.md -- Frontend auth: middleware, admin layout, login page, verify page, admin API client
-- [ ] 04-04-PLAN.md -- Frontend admin pages: hours grid editor, overrides manager, parser health dashboard
+- [x] 04-01-PLAN.md -- Backend foundation: config, ParserRun model, auth service, admin schemas, admin router (auth endpoints), CORS update
+- [x] 04-02-PLAN.md -- Backend CRUD: hours/overrides endpoints, health query, parser fallback instrumentation
+- [x] 04-03-PLAN.md -- Frontend auth: middleware, admin layout, login page, verify page, admin API client
+- [x] 04-04-PLAN.md -- Frontend admin pages: hours grid editor, overrides manager, parser health dashboard
 
 ## Progress
 
@@ -102,4 +102,4 @@ Note: Phase 3 and Phase 4 both depend on Phase 2 and could execute in parallel.
 | 1. Parsers & Data Models | 4/4 | Complete ✓ | 2026-02-07 |
 | 2. API & Caching | 4/4 | Complete ✓ | 2026-02-08 |
 | 3. Web Frontend | 5/5 | Complete ✓ | 2026-02-09 |
-| 4. Admin Panel | 0/TBD | Not started | - |
+| 4. Admin Panel | 4/4 | Complete ✓ | 2026-02-09 |
