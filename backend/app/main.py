@@ -4,13 +4,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
+from app.db import init_db
 from app.redis import create_redis
 from app.routers import admin, halls, menus, open_now
+
+# Ensure all models are imported so create_all sees them
+import app.models.parser_run  # noqa: F401
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Manage application lifecycle: Redis connection."""
+    """Manage application lifecycle: DB tables, Redis connection."""
+    await init_db()
     settings = get_settings()
     app.state.redis = create_redis(settings.redis_url)
     yield

@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy import case, func
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import select as sa_select
 from sqlmodel import select
 
 from app.config import get_settings
@@ -62,14 +63,17 @@ def verify_magic_link(body: MagicLinkVerify):
             status_code=401, content={"detail": "Invalid or expired token"}
         )
 
+    settings = get_settings()
     session_token = create_session_token(email)
+    is_dev = settings.frontend_url.startswith("http://localhost")
     response = JSONResponse(content={"message": "Authenticated"})
     response.set_cookie(
         key="admin_session",
         value=session_token,
         httponly=True,
-        secure=True,
+        secure=not is_dev,
         samesite="lax",
+        path="/",
         max_age=7 * 24 * 60 * 60,
     )
     return response
@@ -79,7 +83,7 @@ def verify_magic_link(body: MagicLinkVerify):
 def logout(admin_email: str = Depends(require_admin)):
     """Log out the admin by deleting the session cookie."""
     response = JSONResponse(content={"message": "Logged out"})
-    response.delete_cookie(key="admin_session")
+    response.delete_cookie(key="admin_session", path="/")
     return response
 
 
@@ -274,34 +278,38 @@ async def parser_health(
     session: AsyncSession = Depends(get_session),
 ):
     """Return per-hall parser health summary for the last 24 hours."""
-    cutoff = _dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=24)
-    stmt = (
-        select(
-            ParserRun.hall_id,
-            func.max(
-                case(
-                    (ParserRun.status == "success", ParserRun.started_at),
-                    else_=None,
-                )
-            ).label("last_success"),
-            func.count().label("total_runs"),
-            func.sum(
-                case((ParserRun.status != "success", 1), else_=0)
-            ).label("error_count"),
+    try:
+        cutoff = _dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=24)
+        stmt = (
+            sa_select(
+                ParserRun.hall_id,
+                func.max(
+                    case(
+                        (ParserRun.status == "success", ParserRun.started_at),
+                        else_=None,
+                    )
+                ).label("last_success"),
+                func.count().label("total_runs"),
+                func.sum(
+                    case((ParserRun.status != "success", 1), else_=0)
+                ).label("error_count"),
+            )
+            .where(ParserRun.started_at >= cutoff)
+            .group_by(ParserRun.hall_id)
         )
-        .where(ParserRun.started_at >= cutoff)
-        .group_by(ParserRun.hall_id)
-    )
-    result = await session.execute(stmt)
-    rows = result.all()
+        result = await session.execute(stmt)
+        rows = result.all()
+    except Exception:
+        logger.exception("Failed to query parser health")
+        return []
 
     return [
         ParserHealthResponse(
             hall_id=row.hall_id,
             last_success=row.last_success.isoformat() if row.last_success else None,
             total_runs_24h=row.total_runs,
-            error_count_24h=row.error_count,
-            error_rate=round(row.error_count / row.total_runs * 100, 1)
+            error_count_24h=int(row.error_count),
+            error_rate=round(int(row.error_count) / row.total_runs * 100, 1)
             if row.total_runs > 0
             else 0.0,
         )
